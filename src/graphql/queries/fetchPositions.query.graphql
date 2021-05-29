@@ -1,0 +1,6 @@
+query {
+  positions {
+    title
+    id
+  }
+}

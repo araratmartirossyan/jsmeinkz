@@ -1,0 +1,26 @@
+query {
+  jobs {
+    description
+    title
+    companyName
+    contactLink
+    type
+    createdAt
+    updatedAt
+    type
+    salary
+    id
+    place
+    tags {
+      title
+      id
+      description
+    }
+    types {
+      title
+    }
+    positions {
+      title
+    }
+  }
+}
