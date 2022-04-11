@@ -1,7 +1,0 @@
-query ($jobId: ID!) {
-  job(id: $jobId) {
-    title
-    description
-    _id
-  }
-}

@@ -1,31 +1,57 @@
-import React, { FC } from 'react'
+import React, { FC, useMemo } from 'react'
 import { JobCardHeader } from './JobCardHeader'
+import ReactMarkdown from 'react-markdown'
 
-export const JobCard: FC<JSMEIN.Job> = ({
+import './JobCard.css'
+
+export const JobCard: FC<JSMEIN.JobCardProps> = ({
   title,
   companyName,
-  place,
+  city,
   salary,
-  type,
-  description,
+  work_types,
+  description = '',
   tags,
-}) => (
-  <div className="mt-10">
-    <JobCardHeader
-      title={title}
-      companyName={companyName}
-      place={place}
-      salary={salary}
-      type={type}
-      onClick={() => {}}
-    />
-    <p className="text-gray-400">{description.slice(0, 251)}...</p>
-    <div className="mt-3">
-      {tags.map((tag) => (
-        <span className="p-2 mr-2 bg-gray-600 text-gray-400 bg-opacity-30">
-          {tag.title}
-        </span>
-      ))}
+  handleClick,
+  isFull = false,
+}) => {
+  const descr = isFull ? description : `${description?.slice(0, 251)}...`
+
+  const updatedTags = useMemo(
+    () => tags?.data.map((item) => ({ ...item.attributes, id: item.id })),
+    [tags]
+  )
+
+  const updatedTypes = useMemo(
+    () => work_types?.data.map((item) => ({ ...item.attributes, id: item.id })),
+    [tags]
+  )
+
+  return (
+    <div className="mt-10">
+      <JobCardHeader
+        title={title}
+        companyName={companyName}
+        place={city}
+        salary={salary}
+        types={updatedTypes}
+        onClick={handleClick}
+      />
+      <div className="mt-3">
+        {updatedTags?.map((tag, index) => (
+          <span
+            className="p-2 mr-2 bg-gray-600 text-gray-400 bg-opacity-30"
+            key={index}
+          >
+            {tag.title}
+          </span>
+        ))}
+      </div>
+      <ReactMarkdown
+        className="text-gray-400 mt-6"
+        children={descr}
+        includeElementIndex={true}
+      />
     </div>
-  </div>
-)
+  )
+}

@@ -1,6 +1,0 @@
-query {
-  positions {
-    title
-    id
-  }
-}

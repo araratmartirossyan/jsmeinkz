@@ -1,6 +1,0 @@
-query {
-  tags {
-    title
-    id
-  }
-}

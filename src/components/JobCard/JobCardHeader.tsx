@@ -1,31 +1,14 @@
 import React, { FC } from 'react'
 import cx from 'classnames'
 
-interface JobCardHeaderProps {
-  title: string
-  companyName: string
-  place: string
-  salary: string
-  type: string
-  onClick: () => void
-}
-
-interface ColoredItemProps {
-  color: string
-  text: string
-  fontSize?: string
-  bold?: boolean
-  pointer?: boolean
-  onClick?: () => void
-}
-
-const ColoredItem: FC<ColoredItemProps> = ({
+const ColoredItem: FC<JSMEIN.ColoredItemProps> = ({
   color,
   text,
   fontSize,
   bold,
   pointer,
   onClick,
+  separator = false,
 }) => (
   <span
     onClick={onClick}
@@ -39,16 +22,16 @@ const ColoredItem: FC<ColoredItemProps> = ({
       'hover:underline': pointer,
     })}
   >
-    {text}
+    {text} {separator ? '| ' : ''}
   </span>
 )
 
-export const JobCardHeader: FC<JobCardHeaderProps> = ({
+export const JobCardHeader: FC<JSMEIN.JobCardHeaderProps> = ({
   title,
   companyName,
   place,
   salary,
-  type,
+  types,
   onClick,
 }) => {
   return (
@@ -62,11 +45,18 @@ export const JobCardHeader: FC<JobCardHeaderProps> = ({
         onClick={onClick}
       />
       <div className="block">
-        <ColoredItem color="#005cc5" text={companyName} /> |{' '}
+        <ColoredItem color="#005cc5" text={companyName} separator />
         <ColoredItem color="#fff" text={place} />
       </div>
-      <ColoredItem color="#e36209" text={salary} /> |{' '}
-      <ColoredItem color="#e36209" text={type} />
+      <ColoredItem color="#e36209" text={salary} separator />
+      {types?.map((type, index) => (
+        <ColoredItem
+          key={index}
+          color="#e36209"
+          text={type.title}
+          separator={index + 1 !== types.length}
+        />
+      ))}
     </div>
   )
 }

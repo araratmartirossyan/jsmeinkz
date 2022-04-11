@@ -1,13 +1,10 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
-import viteGraphQl from '@rollup/plugin-graphql'
 import ViteFonts from 'vite-plugin-fonts'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
-    // alias: [{ find: "@", replacement: resolve(__dirname, "./src") }, ],
     alias: [
       { find: '@', replacement: resolve(__dirname, './src') },
       {
@@ -18,7 +15,6 @@ export default defineConfig({
   },
   plugins: [
     reactRefresh(),
-    viteGraphQl(),
     ViteFonts({
       google: {
         families: ['Fira Sans Condensed'],

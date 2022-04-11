@@ -1,46 +1,101 @@
 declare namespace JSMEIN {
   type Tag = {
     title: string
-    id: string
+    id: number
   }
 
   type Position = {
     title: string
-    id: string
+    id: number
   }
 
   type Type = {
     title: string
-    id: string
+    id: number
   }
 
-  type Job = {
-    title: string
-    companyName: string
-    place: string
-    salary: string
-    type: string
-    description: string
+  // special for Job item
+  interface Job {
+    title?: string
+    companyName?: string
+    city?: string
+    salary?: string
+    work_types?: {
+      data: {
+        id: number
+        attributes: Type
+      }[]
+    }
+    description?: string
     createdAt?: string
     updatedAt?: string
-    tags: Tag[]
-    contactLink: string
+    tags?: {
+      data: {
+        id: number
+        attributes: Tag
+      }[]
+    }
+    contactLink?: string
+    id?: number | string
+  }
+
+  type JobResult = {
+    data: {
+      id: number
+      attributes: Job
+    }
   }
 
   type TagsResult = {
-    tags: Tag[]
+    data: {
+      id: number
+      attributes: Tag
+    }[]
   }
 
   type PositionsResult = {
-    positions: Position[]
+    data: {
+      id: number
+      attributes: Position
+    }[]
   }
 
   type TypesResult = {
-    types: Type[]
+    data: {
+      id: number
+      attributes: Type
+    }[]
   }
 
   type JobsResult = {
-    jobs: Job[]
+    data: {
+      id: number
+      attributes: Job
+    }[]
+  }
+
+  interface JobCardProps extends Partial<Job> {
+    handleClick?: () => void
+    isFull?: boolean
+  }
+
+  interface JobCardHeaderProps {
+    title?: string
+    companyName?: string
+    place?: string
+    salary?: string
+    types?: Type[]
+    onClick?: () => void
+  }
+
+  interface ColoredItemProps {
+    color: string
+    text?: string
+    fontSize?: string
+    bold?: boolean
+    pointer?: boolean
+    separator?: boolean
+    onClick?: () => void
   }
 }
 

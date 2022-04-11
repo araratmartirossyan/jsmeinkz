@@ -1,28 +1,40 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { ApolloProvider } from '@apollo/client/react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import { client } from './graphql'
+import { Home } from './pages/Home'
+import Admin from './pages/Admin'
+import { Job } from './pages/Job'
+import { JobForm } from './pages/JobForm'
 
 import './index.css'
-import { Home } from './pages/Home/Home'
-import { Job } from './pages/Job/Job'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+      refetchOnWindowFocus: false,
+    },
+  },
+})
 
 ReactDOM.render(
-  <ApolloProvider client={client}>
-    <React.StrictMode>
+  <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools initialIsOpen={false} />
       <Router>
-        <Switch>
-          <Route path="/job/:id">
-            <Job />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/job/create" element={<JobForm />} />
+
+          <Route path="/job/:id" element={<Job />} />
+
+          <Route path="/" element={<Home />} />
+        </Routes>
       </Router>
-    </React.StrictMode>
-  </ApolloProvider>,
+    </QueryClientProvider>
+  </React.StrictMode>,
   document.getElementById('root')
 )
