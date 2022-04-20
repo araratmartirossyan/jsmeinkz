@@ -1,9 +1,6 @@
-import { Button } from './Button/Button'
-import { Input } from './Input/Input'
-import { Heading } from './Heading/Heading'
-import { Tag } from './Tag/Tag'
-import { JobCard, Job } from './JobCard/JobCard'
-import { JobCardHeader } from './JobCard/JobCardHeader'
-
-export { Button, Input, Heading, Tag, JobCard, JobCardHeader }
-export type { Job }
+export { Button } from './Button/Button'
+export { Input } from './Input/Input'
+export { Heading } from './Heading/Heading'
+export { Tag } from './Tag/Tag'
+export { JobCard } from './JobCard/JobCard'
+export { JobCardHeader } from './JobCard/JobCardHeader'
