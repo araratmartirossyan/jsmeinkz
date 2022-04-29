@@ -1,6 +1,6 @@
 import React, { FC, useMemo } from 'react'
 import { JobCardHeader } from './JobCardHeader'
-import ReactMarkdown from 'react-markdown'
+// import ReactMarkdown from 'react-markdown'
 
 import './JobCard.css'
 
@@ -47,11 +47,11 @@ export const JobCard: FC<JSMEIN.JobCardProps> = ({
           </span>
         ))}
       </div>
-      <ReactMarkdown
+      {/* <ReactMarkdown
         className="text-gray-400 mt-6"
         children={descr}
         includeElementIndex={true}
-      />
+      /> */}
     </div>
   )
 }

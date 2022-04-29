@@ -25,9 +25,6 @@ export const JobForm = () => {
     fetchJobs
   )
 
-  console.log(jobsResult)
-
-
   const onSubmit = (
     values: InitialValues,
     { setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }

@@ -5,7 +5,7 @@ import { useQuery } from 'react-query'
 import { Page } from '@/components/layout/page'
 import { JobCard } from '@/components/JobCard/JobCard'
 
-import { fetchJob } from '@/services/queries'
+import { fetchJob } from '../services/queries'
 
 export const Job = () => {
   const { id = '' } = useParams<{ id: string }>()

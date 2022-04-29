@@ -10,7 +10,7 @@ import {
   fetchTags,
   fetchPositions,
   fetchWorkTypes,
-} from '@/services/queries'
+} from '../services/queries'
 
 // GraphQl
 const renderTag = (item: JSMEIN.Tag, key: number) => (
@@ -20,35 +20,21 @@ const renderTag = (item: JSMEIN.Tag, key: number) => (
 export const Home = () => {
   const navigate = useNavigate()
 
-  const { data: typesResult, isLoading: typesLoading } = useQuery(
-    'work-types',
-    fetchWorkTypes
-  )
+  const { data: typesResult } = useQuery('work-types', fetchWorkTypes)
 
-  const { data: positionsResult, isLoading: positionsLoading } = useQuery(
-    'positions',
-    fetchPositions
-  )
+  const { data: positionsResult } = useQuery('positions', fetchPositions)
 
-  const { data: tagsResult, isLoading: tagsLoading } = useQuery(
-    'tags',
-    fetchTags
-  )
+  const { data: tagsResult } = useQuery('tags', fetchTags)
 
-  const { data: jobsResult, isLoading: jobsLoading } = useQuery(
-    'jobs',
-    fetchJobs
-  )
-
-  if (jobsLoading || tagsLoading || positionsLoading || typesLoading) {
-    return <div>...Loading</div>
-  }
+  const { data: jobsResult } = useQuery('jobs', fetchJobs)
 
   return (
     <div className="home-page">
       <Page>
         <header className="flex justify-end w-full max-w-3xl">
-          <Link className='text-blue-600 text-sm underline ' to="/job/create">Post your job for $95</Link>
+          <Link className="text-blue-600 text-sm underline " to="jobform">
+            Post your job for $95
+          </Link>
         </header>
         <div className="flex flex-col items-center max-w-2xl">
           <Heading tag="h2" className="text-white text-2xl font-bold mt-2">
