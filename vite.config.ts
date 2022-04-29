@@ -4,15 +4,15 @@ import reactRefresh from '@vitejs/plugin-react-refresh'
 import ViteFonts from 'vite-plugin-fonts'
 
 export default defineConfig({
-  resolve: {
-    alias: [
-      { find: '@', replacement: resolve(__dirname, './src') },
-      {
-        find: '@components',
-        replacement: resolve(__dirname, './src/components'),
-      },
-    ],
-  },
+  // resolve: {
+  //   alias: [
+  //     { find: '@', replacement: resolve(__dirname, './src') },
+  //     {
+  //       find: '@components',
+  //       replacement: resolve(__dirname, './src/components'),
+  //     },
+  //   ],
+  // },
   plugins: [
     reactRefresh(),
     ViteFonts({

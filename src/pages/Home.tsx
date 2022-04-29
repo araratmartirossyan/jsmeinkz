@@ -3,14 +3,14 @@ import { useQuery } from 'react-query'
 import { useNavigate } from 'react-router-dom'
 
 // Components
-import { Page } from '@/components/layout/page'
-import { Heading, Tag, Input, Button, JobCard, Job } from '@/components'
+import { Page } from '../components/layout/page'
+import { Heading, Tag, Input, Button, JobCard, Job } from '../components'
 import {
   fetchJobs,
   fetchTags,
   fetchPositions,
   fetchWorkTypes,
-} from '@/services/queries'
+} from '../services/queries'
 
 // GraphQl
 const renderTag = (item: JSMEIN.Tag, key: number) => (
@@ -85,3 +85,5 @@ export const Home = () => {
     </div>
   )
 }
+
+export default Home;

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik } from 'formik'
 
-import { Page } from '@/components/layout/Page'
+import { Page } from '../components/layout/page'
 
 export const JobForm = () => (
   <Page>
@@ -63,3 +63,5 @@ export const JobForm = () => (
     </div>
   </Page>
 )
+
+export default JobForm;
