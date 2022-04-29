@@ -13,15 +13,12 @@ const queryClient = new QueryClient({
   },
 })
 
-const pages = import.meta.globEager('./pages/*.tsx')
+const pages = import.meta.globEager('./pages/index.ts')
 
-const routes = Object.keys(pages).map((path) => {
-  // @ts-ignore
-  const name = path.match(/\.\/pages\/(.*)\.tsx$/)[1]
+const routes = Object.keys(pages['./pages/index.ts']).map((path) => {
   return {
-    name,
-    path: name === 'Home' ? '/' : `/${name.toLowerCase()}`,
-    component: pages[path].default,
+    path: path === 'Home' ? '/' : `/${path.toLowerCase()}`,
+    component: pages['./pages/index.ts'][path],
   }
 })
 

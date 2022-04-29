@@ -5,6 +5,7 @@ interface ButtonProps {
   children?: JSX.Element | string
   onClick?: () => void
   disabled?: boolean
+  type?: 'button' | 'submit' | 'reset'
 }
 
 export const Button = ({
@@ -12,8 +13,14 @@ export const Button = ({
   children,
   onClick,
   disabled,
+  type = 'button',
 }: ButtonProps) => (
-  <button className={className} onClick={onClick} disabled={disabled}>
+  <button
+    type={type}
+    className={className}
+    onClick={onClick}
+    disabled={disabled}
+  >
     {children}
   </button>
 )

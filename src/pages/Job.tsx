@@ -2,8 +2,8 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useQuery } from 'react-query'
 
-import { Page } from '../components/layout/page'
-import { JobCard } from '../components/JobCard/JobCard'
+import { Page } from '@/components/layout/page'
+import { JobCard } from '@/components/JobCard/JobCard'
 
 import { fetchJob } from '../services/queries'
 
@@ -24,5 +24,3 @@ export const Job = () => {
     </Page>
   )
 }
-
-export default Job
