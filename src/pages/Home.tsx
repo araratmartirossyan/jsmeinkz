@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 // Components
 import { Page } from '@/components/layout/page'
 import { Heading, Tag, Input, Button, JobCard } from '@/components'
+import { Footer } from '@/components/Footer/Footer'
 import {
   fetchJobs,
   fetchTags,
@@ -48,7 +49,9 @@ export const Home = () => {
     <div className="home-page">
       <Page>
         <header className="flex justify-end w-full max-w-3xl">
-          <Link className='text-blue-600 text-sm underline ' to="/job/create">Post your job for $95</Link>
+          <Link className="text-blue-600 text-sm underline " to="/job/create">
+            Post your job for $95
+          </Link>
         </header>
         <div className="flex flex-col items-center max-w-2xl">
           <Heading tag="h2" className="text-white text-2xl font-bold mt-2">

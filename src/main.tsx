@@ -10,6 +10,7 @@ import { JobForm } from './pages/JobForm'
 import './index.css'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
+import { Footer } from './components/Footer/Footer'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -33,6 +34,7 @@ ReactDOM.render(
 
           <Route path="/" element={<Home />} />
         </Routes>
+        <Footer />
       </Router>
     </QueryClientProvider>
   </React.StrictMode>,
