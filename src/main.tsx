@@ -10,6 +10,7 @@ import { JobForm } from './pages/JobForm'
 import './index.css'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
+import { Login } from './pages/Login'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,6 +27,8 @@ ReactDOM.render(
       <ReactQueryDevtools initialIsOpen={false} />
       <Router>
         <Routes>
+          <Route path="/login" element={<Login />}/>
+          <Route path="/signUp" element={<Login />}/>
           <Route path="/admin" element={<Admin />} />
           <Route path="/job/create" element={<JobForm />} />
 
