@@ -14,7 +14,6 @@ export const JobForm = () => {
     initialValues,
   ])
 
-
   const { data: tagsResult, isLoading: tagsLoading } = useQuery(
     'tags',
     fetchTags
@@ -24,9 +23,6 @@ export const JobForm = () => {
     'tags',
     fetchJobs
   )
-
-  console.log(jobsResult)
-
 
   const onSubmit = (
     values: InitialValues,

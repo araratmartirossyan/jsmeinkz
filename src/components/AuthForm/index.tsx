@@ -1,9 +1,9 @@
 import { Button, Input } from '@/components'
-import { initialValues } from '@/pages/JobForm/constants'
-import { InitialValues } from '@/pages/JobForm/types'
-import { validate } from '@/pages/JobForm/utils'
+import { initialValues } from '../../pages/JobForm/constants'
+import { InitialValues } from '../../pages/JobForm/types'
+import { validate } from '../../pages/JobForm/utils'
 import { Formik } from 'formik'
-import React, { Children } from 'react'
+import React from 'react'
 
 export const AuthForm = () => {
   const onSubmit = (
@@ -31,17 +31,16 @@ export const AuthForm = () => {
               JSMEIN.KZ
             </h2>
             <span className="text-center text-gray-100">
-              Введите адрес электронной почты, чтобы войти или создать учетную
-              запись
+              Enter your email to sign in or create an account
             </span>
-            <Input placeholder={'yours@example.com'} />
+            <Input placeholder="yours@example.com" />
             <span className="text-xs text-center text-gray-50">
-              Регистрируясь, вы соглашаетесь с нашими условиями обслуживания и
-              политикой конфиденциальности.
+              By signing up, you agree to our terms of service and privacy
+              policy.
             </span>
           </div>
-          <Button type={'button'} className={'w-full h-16 bg-blue-600 text-white'}>
-            Разместить
+          <Button type="button" className="w-full h-16 bg-blue-600 text-white">
+          Submit
           </Button>
         </form>
       </div>
