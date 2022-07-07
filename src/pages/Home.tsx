@@ -5,7 +5,6 @@ import { Link, useNavigate } from 'react-router-dom'
 // Components
 import { Page } from '@/components/layout/page'
 import { Heading, Tag, Input, Button, JobCard } from '@/components'
-import { Footer } from '@/components/Footer/Footer'
 import {
   fetchJobs,
   fetchTags,

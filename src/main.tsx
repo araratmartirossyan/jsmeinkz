@@ -26,15 +26,17 @@ ReactDOM.render(
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <Router>
-        <Routes>
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/job/create" element={<JobForm />} />
+        <div className="min-h-screen flex flex-col justify-between">
+          <Routes>
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/job/create" element={<JobForm />} />
 
-          <Route path="/job/:id" element={<Job />} />
+            <Route path="/job/:id" element={<Job />} />
 
-          <Route path="/" element={<Home />} />
-        </Routes>
-        <Footer />
+            <Route path="/" element={<Home />} />
+          </Routes>
+          <Footer />
+        </div>
       </Router>
     </QueryClientProvider>
   </React.StrictMode>,
