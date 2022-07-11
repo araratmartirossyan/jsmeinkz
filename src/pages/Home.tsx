@@ -47,10 +47,16 @@ export const Home = () => {
   return (
     <div className="home-page">
       <Page>
-        <header className="flex justify-end w-full max-w-3xl">
-          <Link className="text-blue-600 text-sm underline " to="/job/create">
-            Post your job for $95
-          </Link>
+        <header className="flex justify-end w-full max-w-4xl">
+            <Link className="text-blue-600 text-sm underline ml-10" to="/job/create">
+              Post your job for $95
+            </Link>
+            <Link className="text-blue-600 text-sm underline ml-10" to="/login">
+              Login
+            </Link>
+            <Link className="text-blue-600 text-sm underline ml-10" to="/signUp">
+              Sign up
+            </Link>
         </header>
         <div className="flex flex-col items-center max-w-2xl">
           <Heading tag="h2" className="text-white text-2xl font-bold mt-2">
