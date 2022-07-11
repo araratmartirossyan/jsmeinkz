@@ -48,7 +48,7 @@ export const AuthForm = () => {
                 Enter your email to sign in or create an account
               </span>
               <div
-                className={`pb-6 mb-12 relative box-border ${
+                className={`pb-6 mb-12 relative box-border w-full ${
                   errors.email && touched.email && 'border-2 border-red-600'
                 }`}
               >
