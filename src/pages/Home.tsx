@@ -47,22 +47,36 @@ export const Home = () => {
   return (
     <div className="home-page">
       <Page>
-        <header className="flex justify-end w-full max-w-4xl">
-            <Link className="text-blue-600 text-sm underline ml-10" to="/job/create">
-              Post your job for $95
-            </Link>
-            <Link className="text-blue-600 text-sm underline ml-10" to="/login">
+        <header className="flex sm:justify-end justify-between w-full max-w-4xl ">
+          <Link
+            className="text-blue-600 text-sm underline sm:ml-10"
+            to="/job/create"
+          >
+            Post your job for $95
+          </Link>
+          <div className="flex justify-end">
+            <Link
+              className="text-blue-600 text-sm underline sm:ml-10"
+              to="/login"
+            >
               Login
             </Link>
-            <Link className="text-blue-600 text-sm underline ml-10" to="/signUp">
+            <Link
+              className="text-blue-600 text-sm underline sm:ml-10 ml-4"
+              to="/signUp"
+            >
               Sign up
             </Link>
+          </div>
         </header>
         <div className="flex flex-col items-center max-w-2xl">
-          <Heading tag="h2" className="text-white text-2xl font-bold mt-2">
+          <Heading
+            tag="h2"
+            className="text-white text-2xl font-bold sm:mt-2 mt-5"
+          >
             JSMEIN.KZ
           </Heading>
-          <Heading tag="span" className="text-white text-xl mt-2">
+          <Heading tag="span" className="text-white text-xl mt-2 text-center">
             Поиск работы для JS разрабов от JS разрабов
           </Heading>
           <div className="home_page__search mt-5 w-full flex">

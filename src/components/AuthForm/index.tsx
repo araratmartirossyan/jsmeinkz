@@ -34,7 +34,7 @@ export const AuthForm = () => {
       }) => (
         <div className="h-screen flex justify-center items-center">
           <form
-            className="flex flex-col items-center space-y-6  border-8 border-gray-600 w-80 h-auto rounded-lg "
+            className="flex flex-col items-center space-y-6  border-4 border-gray-600 w-80 h-auto rounded-lg "
             onSubmit={(event) => {
               event.preventDefault()
               handleSubmit()
@@ -49,7 +49,9 @@ export const AuthForm = () => {
               </span>
               <div
                 className={`pb-6 mb-12 relative box-border w-full ${
-                  errors.email && touched.email && 'border-2 border-red-600'
+                  errors.email &&
+                  touched.email &&
+                  'rounded border-2 border-red-600'
                 }`}
               >
                 <Input
@@ -71,14 +73,14 @@ export const AuthForm = () => {
                   className={`pb-6 text-center flex relative box-border ${
                     errors.checked &&
                     touched.checked &&
-                    'border-2 border-red-600'
+                    ' rounded border-2 border-red-600'
                   }`}
                 >
                   <input
                     type="checkbox"
                     name="checked"
                     onChange={handleChange}
-                    className="mr-px"
+                    className="mr-1 ml-1"
                     value={values.checked}
                   />
 
